@@ -1,0 +1,10 @@
+<h1>Product Details</h1>
+<ul *ngIf="(displayerrors.length>0)" style="list-style-type:none;">
+    <li *ngFor="let x of displayerrors">{{x}}</li>
+</ul>
+
+<p>Name <span>{{product.name}}</span></p>
+<p>Qty<span>{{product.quantity}}</span></p>
+<p>Price<span>${{product.price}}</span></p>
+<button [routerLink]="['/products']">BACK</button>
+<button (click)='deleteproduct()' [disabled]="product.quantity>0" style="background-color:red;">DELETE</button>

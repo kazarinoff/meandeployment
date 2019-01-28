@@ -1,0 +1,27 @@
+<h1>New Product</h1>
+<ul *ngIf="(displayerrors.length>0)" style="list-style-type:none;">
+    <li *ngFor="let x of displayerrors">{{x}}</li>
+</ul>
+<div *ngIf="name.invalid && (name.dirty || name.touched)">
+<p *ngIf="name.errors.required">Name is required</p>
+<p *ngIf="name.errors.minlength">Name must be at least 2 characters long</p>
+</div>
+<div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)">
+        <p *ngIf="quantity.errors.required">Name is required</p>
+        <!-- <p *ngIf="name.errors.minlength">Name must be at least 2 characters long</p> -->
+        </div>
+        <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)">
+                <p *ngIf="quantity.errors.required">Quantity is required</p>
+        </div>
+
+        <div *ngIf="price.invalid && (price.dirty || price.touched)">
+                <p *ngIf="price.errors.required">Price is required</p>
+        </div>
+        
+<form (ngSubmit)='newProduct()' #newForm="ngForm">
+Name:<input [(ngModel)]="newproduct.name" type='text' name='name' required minlength='2' #name="ngModel">
+<br>Quantity:<input [(ngModel)]="newproduct.quantity" type='number' name='b' required #quantity="ngModel">
+<br>Price:<input [(ngModel)]="newproduct.price" type='number' name='c' required min=0 #price="ngModel">
+<br><input type='submit' [disabled]="!newForm.valid" value="CREATE" style="background-color:cornflowerblue;">
+</form>
+<button (click)='resetproduct()'>RESET</button>

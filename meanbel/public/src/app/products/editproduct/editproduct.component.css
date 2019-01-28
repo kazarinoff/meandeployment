@@ -1,0 +1,20 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    background-color: lavender;
+    border-radius: 5px;
+    height: 30px;
+    width:80px;
+    margin:10px;
+    box-shadow: none;
+}
+label{
+    padding-right:200px;
+    text-emphasis: bold;
+    font-size: 24pt;
+}
+span{
+    position: relative;
+    margin-left: 400px;
+}

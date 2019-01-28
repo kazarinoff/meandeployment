@@ -1,0 +1,18 @@
+<h1>Products List</h1>
+<button routerLink='/products/new' style="height:130px;">Add New Product</button>
+<table>
+  <tr style="background-color: grey;color:white;text-align:left; height:60px;">
+    <th style="width:50px">Id</th>
+    <th style="width:250px">Name</th>
+    <th style="width:100px">Qty</th>
+    <th style="width:150px">Price</th>
+    <th style="width:250px">Actions</th>
+  </tr>
+  <tr *ngFor='let product of products'>
+    <td>{{product.specialid}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.price}}</td>
+    <td><button routerLink="/products/{{product.specialid}}/edit">EDIT</button><button routerLink="/products/{{product.specialid}}">Details</button></td>
+  </tr>
+</table>
